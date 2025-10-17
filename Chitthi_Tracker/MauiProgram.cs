@@ -1,4 +1,6 @@
-﻿using Chitthi_Tracker.Services;
+﻿using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
+using Chitthi_Tracker.Services;
 
 namespace Chitthi_Tracker;
 
@@ -16,12 +18,8 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        // Services
         builder.Services.AddSingleton<ILocationService, LocationService>();
         builder.Services.AddSingleton<IDataStore, SqliteDataStore>();
-        builder.Services.AddSingleton<HeatmapService>();
-
-        // Pages
         builder.Services.AddSingleton<MainPage>();
 
         return builder.Build();
